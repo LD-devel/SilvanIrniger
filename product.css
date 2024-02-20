@@ -1,5 +1,9 @@
 .container {
-  max-width: 960px;
+  /* max-width: 960px; */
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  top: 0px;
 }
 
 .icon-link > .bi {
