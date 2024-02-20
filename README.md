@@ -2,7 +2,7 @@
 
 This is the repository for the personal profile website of Swiss violinist Silvan Irniger (currently under construction).
 
-Visit at [SilvanIrniger.com](SilvanIrniger.com)
+Visit at [SilvanIrniger.com](http://www.SilvanIrniger.com)
 
 ### To test locally run:
 `python -m http.server`
