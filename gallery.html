@@ -24,6 +24,7 @@
         $("#footer-placeholder").load("utils/footer.html")
       });
     </script>
+
   </head>
 
   <body>
@@ -32,7 +33,54 @@
 <div id="navbar-placeholder"></div>
 
 <main>
- <h1>Under construction...</h1>
+ 
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Gallery</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" style="width: 50%;">
+          <div class="card shadow-sm">
+            <div class="img-wrapper">
+              <img src="images/Foto3.jpg" alt="Portrait Silvan Irniger" class="img-responsive" style="width:100%;" onclick="this.requestFullscreen()">
+            </div>
+            <div class="card-body">
+              <!-- <div class="d-flex justify-content-between align-items-center"></div> -->
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="img-wrapper">
+              <img src="images/Foto.jpg" alt="Portrait Silvan Irniger" class="img-responsive" style="width:100%;" onclick="this.requestFullscreen()">
+            </div>
+            <div class="card-body">
+              <!-- <div class="d-flex justify-content-between align-items-center"></div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col" style="width: 50%;">
+          <div class="card shadow-sm">
+            <div class="img-wrapper">
+              <img src="images/Foto2.jpg" alt="Portrait Silvan Irniger" class="img-responsive" style="width:100%;" onclick="this.requestFullscreen()">
+            </div>
+            <div class="card-body">
+              <!-- <div class="d-flex justify-content-between align-items-center"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </main>
 
 <div id="footer-placeholder"></div>
