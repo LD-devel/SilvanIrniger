@@ -23,7 +23,25 @@
         $("#navbar-placeholder").load("utils/navbar.html");
         $("#footer-placeholder").load("utils/footer.html")
       });
+
     </script>
+        <style>
+          body {
+              padding: 2rem;
+          }
+          form {
+              max-width: 500px;
+              margin: auto;
+          }
+          .contact-form-container {
+            background-color: #adadad;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: auto;
+        }
+      </style>
   </head>
 
   <body>
@@ -32,7 +50,30 @@
 <div id="navbar-placeholder"></div>
 
 <main>
- <h1>Under construction...</h1>
+  <div class="contact-form-container">
+  <h1 class="text-center mb-4">Kontakt</h1>
+
+  <form id="contactForm" action="/submit-contact-form/" method="POST">
+      <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      
+      <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+      
+      <div class="mb-3">
+          <label for="message" class="form-label">Nachricht:</label>
+          <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+      </div>
+      
+      <center>
+        <button type="submit" class="btn btn-secondary">Abschicken</button>
+      </center>
+  </form>
+  </div>
 </main>
 
 <div id="footer-placeholder"></div>

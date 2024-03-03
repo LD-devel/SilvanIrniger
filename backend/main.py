@@ -15,7 +15,7 @@ class ContactForm(BaseModel):
     subject: str
     message: Optional[str] = None
 
-@app.post("/submit-form/")
+@app.post("/submit-contact-form/")
 async def submit_form(contact_form: ContactForm):
     try:
         return {"message": "Form submission successful"}
