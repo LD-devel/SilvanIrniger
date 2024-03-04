@@ -1,7 +1,8 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Form
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse 
 
+from typing_extensions import Annotated
 from pydantic import BaseModel
 from typing import Optional
 
@@ -31,17 +32,14 @@ async def get_contact():
 async def get_gallery():
     return FileResponse("../frontend/gallery.html")
 
-class ContactForm(BaseModel):
-    name: str
-    email: str
-    subject: str
-    message: str
-
 @app.post("/submit-contact-form/")
-async def submit_form(contact_form: ContactForm):
+async def submit_form(name: Annotated[str, Form()],
+                      email: Annotated[str, Form()],
+                      subject: Annotated[str, Form()],
+                      message: Annotated[str, Form()]): 
     try:
-        print(contact_form)
-        return {"message": "Form submission successful"}
+        return {"message": "Form submission successful "}
     except Exception as e:
+        print("this step")
         raise HTTPException(status_code=500, detail="Internal server error")
 
