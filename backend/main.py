@@ -1,11 +1,18 @@
+# FastApi imports
 from fastapi import FastAPI, HTTPException, Form
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
 from fastapi.responses import RedirectResponse
 
+# Typing imports
 from typing_extensions import Annotated
 from pydantic import BaseModel
 from typing import Optional
+
+# Email
+import smtplib, os
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 app = FastAPI()
 
@@ -47,6 +54,26 @@ async def submit_form(name: Annotated[str, Form()],
                       subject: Annotated[str, Form()],
                       message: Annotated[str, Form()]): 
     try:
+        # Set recipient as environment variable
+        rec_address = os.getenv('EMAIL_RECIPIENT')
+        server_email = os.getenv('EMAIL_SERVER')
+        server_pwd = os.getenv('PWD_EMAIL_SERVER')
+        
+        # Construct email message
+        msg = MIMEMultipart()
+        msg['From'] = server_email
+        msg['To'] = rec_address
+        msg['Cc'] = email
+        msg['Subject'] = subject
+        body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
+        msg.attach(MIMEText(body, 'plain'))
+
+        # Connect to SMTP server and send email
+        with smtplib.SMTP('smtp.strato.de', 587) as server:
+            server.starttls()
+            server.login(server_email, server_pwd)
+            server.sendmail(server_email, [rec_address, email], msg.as_string())
+
         return RedirectResponse("/success")
     except:
         raise HTTPException(status_code=500, detail="Internal server error")
