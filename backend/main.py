@@ -58,6 +58,9 @@ async def submit_form(name: Annotated[str, Form()],
         rec_address = os.getenv('EMAIL_RECIPIENT')
         server_email = os.getenv('EMAIL_SERVER')
         server_pwd = os.getenv('PWD_EMAIL_SERVER')
+        assert rec_address
+        assert server_email
+        assert server_pwd
         
         # Construct email message
         msg = MIMEMultipart()
@@ -75,6 +78,7 @@ async def submit_form(name: Annotated[str, Form()],
             server.sendmail(server_email, [rec_address, email], msg.as_string())
 
         return RedirectResponse("/success")
-    except:
+    except Exception as e:
+        print(e)
         raise HTTPException(status_code=500, detail="Internal server error")
 
