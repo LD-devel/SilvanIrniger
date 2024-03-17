@@ -4,5 +4,10 @@ This is the repository for the personal profile website of Swiss violinist Silva
 
 Visit at [SilvanIrniger.com](http://www.SilvanIrniger.com)
 
-### To test locally run:
-`python -m http.server`
+### To test locally run locally:
+`uvicorn main:app`
+
+To send emails on form submission set enviroment variables:
+ - `EMAIL_RECIPIENT`
+ - `EMAIL_SERVER`
+ - `PWD_EMAIL_SERVER`

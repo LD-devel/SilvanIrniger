@@ -23,7 +23,26 @@
         $("#navbar-placeholder").load("utils/navbar.html");
         $("#footer-placeholder").load("utils/footer.html")
       });
+
     </script>
+        <style>
+          body {
+              padding: 2rem;
+          }
+          form {
+              max-width: 500px;
+              margin: auto;
+          }
+          .contact-form-container {
+            background-color: #adadad;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 30px;
+        }
+      </style>
   </head>
 
   <body>
@@ -32,7 +51,11 @@
 <div id="navbar-placeholder"></div>
 
 <main>
- <h1>Under construction...</h1>
+  <div class="contact-form-container">
+  <h1 class="text-center mb-4">Anfrage erfolgreich versendet!</h1>
+  Eine Kopie der Anfrage sollte sich in Ihrem Postfach befinden.
+
+  </div>
 </main>
 
 <div id="footer-placeholder"></div>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head><script src="./assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Silvan Irniger</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="utils/product.css" rel="stylesheet">
+    <!-- For social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        $("#navbar-placeholder").load("utils/navbar.html");
+        $("#footer-placeholder").load("utils/footer.html")
+      });
+
+    </script>
+        <style>
+          body {
+              padding: 2rem;
+          }
+          form {
+              max-width: 500px;
+              margin: auto;
+          }
+          .contact-form-container {
+            background-color: #adadad;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 30px;
+        }
+      </style>
+  </head>
+
+  <body>
+
+
+<div id="navbar-placeholder"></div>
+
+<main>
+  <div class="contact-form-container">
+  <h1 class="text-center mb-4">Kontakt</h1>
+
+  <form id="contactForm" action="/submit-contact-form/" method="POST">
+      <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      
+      <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+      
+      <div class="mb-3">
+          <label for="subject" class="form-label">Betreff:</label>
+          <input type="text" id="subject" name="subject" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+          <label for="message" class="form-label">Nachricht:</label>
+          <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+      </div>
+      
+      <center>
+        <button type="submit" class="btn btn-secondary">Abschicken</button>
+      </center>
+  </form>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+      <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
